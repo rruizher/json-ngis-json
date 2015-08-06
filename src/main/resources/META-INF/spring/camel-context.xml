@@ -10,7 +10,7 @@
 	<bean id="ngisprocessor" class="com.redhat.camel.ngis.NGISProcessor" />
 
 
-
+<camelContext xmlns="http://camel.apache.org/schema/spring">
 	<dataFormats>
 		<json library="Jackson" unmarshalTypeName="com.redhat.camel.ngis.beans.WeatherStation"
 			id="jack" />

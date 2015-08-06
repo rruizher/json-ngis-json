@@ -1,9 +1,14 @@
 # json-ngis-json
 Camel route to transform a json input in a different json data structure.	
-It uses 2 unmarshallers from Jackson library in order to transform into/from Java classes.
+It uses 2 unmarshallers from Jackson library and a custom Camel processor to adapt from a POJO to another POJO and then in final JSON file.
+
+![alt tag](https://cloud.githubusercontent.com/assets/7669634/9110646/a4163274-3c3f-11e5-982c-51275c66cd92.png)
+
+
+
 
 To use clone the repository and
-  mvn camel:run
+``` mvn camel:run ```
 
 Transforms from:
 ```

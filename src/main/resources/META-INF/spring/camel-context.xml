@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Configures the Camel Context -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<bean id="ngisprocessor" class="com.redhat.camel.ngis.NGISProcessor" />
+
+
+
+	<dataFormats>
+		<json library="Jackson" unmarshalTypeName="com.redhat.camel.ngis.beans.WeatherStation"
+			id="jack" />
+		<json library="Jackson" unmarshalTypeName="com.redhat.camel.ngis.beans.NgisRequest"
+			id="jack2" />
+	</dataFormats>
+	<route>
+		<from
+			uri="file:src/data?fileName=ValenceRealTimeStation233.json&amp;noop=true" />
+
+		<unmarshal ref="jack" />
+		<process ref="ngisprocessor" />
+		<marshal ref="jack2" />
+		<to uri="file:target/messages?fileName=peticionngis.json" />
+	</route>
+</camelContext>
+
+</beans>

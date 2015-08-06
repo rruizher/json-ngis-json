@@ -1,0 +1,13 @@
+{
+	"number":233,
+	"name":"233_SAN_JUAN_BOSCO_SANTIAGO_RUSIÃ‘OL",
+	"address":"San Juan Bosco - Santiago RusiÃ±ol",	
+	"banking":true,
+	"bonus":false,
+	"status":"OPEN",
+	"contract_name":"Valence",
+	"bike_stands":15,
+	"available_bike_stands":1,
+	"available_bikes":11,
+	"last_update":1436397064000
+}
